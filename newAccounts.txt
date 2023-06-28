@@ -814,13 +814,3 @@ account 118:tai.money
 Following
 Low interest loans against ETH and ETH LSDs. Rewards to minters and liquidity providers http://Tai.money http://discord.gg/hAmSqrJCWh
 ---------------------------------------
-api_key:nViaMYTgKVdP3rtIBlkEvDrqu
-api_secret:GjzjsaknMi1WdjvakxsavBYsJ9D4Kzg1oXwEAwicqCG01IFcQ2
-bearer_token:AAAAAAAAAAAAAAAAAAAAAKbcoQEAAAAAWpHsptjzCgHdr%2BxhZ0mkXovRsnA%3DzGZlDG9JxFRPkkeOeEbTudXsDb4K2ZbrgcPQ6TDjcciUps3OkT
-access_token:1673409364160311309-ouizvNTta3WcmDxrF96tHPZNlHASp4
-access_token_secret:mO41c3beZffwHpxpIIxqUgBbC0oBpwwMNxgA6D5qY0j2P
-
-
-
-client:cEdyOTBQQXQ1aDJNRnVGdEZaamY6MTpjaQ
-client_secret:6JsZ17oI7Pw11EHgPmu4tRBTWRFzE2V60dqCTLKseDHEQlPec1
