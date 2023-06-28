@@ -1,0 +1,826 @@
+---------------------------------------
+ Accounts followed by Tarun Chitra 3,672
+ iterator = 
+ 118
+---------------------------------------
+account 1:Georgios Konstantopoulos
+@gakonst
+Follow
+very greek accent. cto & research partner
+@paradigm
+. optimist and rustacean // we're hiring - dm if you wanna work together on hard internal eng problems
+---------------------------------------
+account 2:Lúcás Meier
+@cronokirby
+Following
+"Apprentice Cryptographer" Cryptography, FP, Math, and other cool stuff. Finishing an MSc
+@EPFL
+Avid, but slow runner.
+---------------------------------------
+account 3:Leshner
+@rleshner
+Following
+Investor at Robot Ventures
+---------------------------------------
+account 4:Dankrad Feist
+@dankrad
+Following
+---------------------------------------
+account 5:guille
+@GuilleAngeris
+Following
+glorified paper editor
+@BainCapCrypto
+alt:
+@tarunchitra
+---------------------------------------
+account 6:devtooligan
+@devtooligan
+Following
+blocksec eng
+@trailofbits
+buidlr makr ascii artiste chief pharmacist
+@huff_language
+prev
+@yield
+@spearbitDAO
+---------------------------------------
+account 7:Paul Razvan Berg
+@PaulRBerg
+Following
+Builder and co-founder
+@Sablier
+. Interested in crypto, DeFi, software, longevity, physics, and epistemology.
+---------------------------------------
+account 8:Patrick McCorry (,)
+@stonecoldpat0
+Following
+I work with
+@arbitrum
+,
+@Lemniscap
+. My tweets represent my personal views and not the organisations I work with.
+---------------------------------------
+account 9:ross
+@z0r0zzz
+Following
+ʞorporate technology /
+@kali__gg
+/
+@lex_DAO
+/
+@nani__ooo
+---------------------------------------
+account 10:zuberg
+@0xzuberg
+Following
+perpetual optimist
+---------------------------------------
+account 11:buffalu
+@buffalu__
+Following
+ceo
+@jito_labs
+/ mev / (,)
+---------------------------------------
+account 12:señor doggo in his wartime ceo era
+@fubuloubu
+Following
+Just a Doggie, Former hooman Got treats for days Building
+@ApeFramework
+Contributor
+@vyperlang
+,
+@iearnfinance
+---------------------------------------
+account 13:Kobi Gurkan | ⬡
+@kobigurk
+Following
+kobi.eth. applied crypto, security, experimental things. head of research
+@__geometry__
+, puzzler
+@__zkhack__
+, prompts
+@zkpodai
+, validating
+@zkvalidator
+,
+@cLabs
+---------------------------------------
+account 14:jtriley.eth
+@jtriley_eth
+Following
+vm architecture & language deep dives http://github.com/jtriley-eth
+---------------------------------------
+account 15:wireless anon
+@wireless_anon
+Following
+in search of hard problems
+---------------------------------------
+account 16:jacob
+@thal0x
+Following
+@SkipProtocol
+| west ham capital
+---------------------------------------
+account 17:Edgar
+@0xEdgar
+Following
+---------------------------------------
+account 18:𓀣 Odysseas.eth 𓀢
+@odysseas_eth
+Following
+∃ 𝖇𝖆s𝖊𝖉 𝓟r𝖔t𝖔c𝖔l 𝔼ngin𝖊𝖊r : 𝕊overeignty 𓀀 ∧ 𝕊hitposts 𓁀 ∧ Privacy 𓁿
+---------------------------------------
+account 19:Sreeram Kannan
+@sreeramkannan
+Following
+Director@UW-Blockchain-Lab. http://blockchain.ece.uw.edu Founder
+@eigenlayer
+http://eigenlayer.com
+---------------------------------------
+account 20:zefram.eth
+@boredGenius
+Following
+Building
+@Timeless_Fi
+@sudoswap
+---------------------------------------
+account 21:Sebastien La Duca
+@sebastienladuca
+Following
+small field snark enjoyoor | building
+@nocturne_xyz
+| prev
+@solana
+,
+@facebook
+,
+@CMU_ECE
+---------------------------------------
+account 22:Markov
+@MarkovMagnifico
+Following
+spreading love and shitposts in equal measure. tryna keep my karma balanced
+---------------------------------------
+account 23:Ali Ghodsi
+@alighodsi
+Following
+Databricks CEO & Co-founder, UC Berkeley Faculty
+---------------------------------------
+account 24:SMG
+@specialmech
+Following
+We enable fair and open markets through breakthrough mechanism design.
+---------------------------------------
+account 25:Frontier Research
+@FrontierDotTech
+Following
+Frontier Research is an independent research and advisory group formed to bridge the gap between fundamental research and commercial products.
+---------------------------------------
+account 26:Jeffrey Ely
+@Jeffely
+Following
+They kept protesting that I was trying to have it both ways. But there are at least 5 or 6 other ways I am also trying to have it.
+---------------------------------------
+account 27:DaniPopes
+@DaniPopes
+Following
+rust
+---------------------------------------
+account 28:s
+@idoccor
+Following
+, C++, HFT (trad+crypto CEX), digital video software back when Lifehouse was "cool"
+---------------------------------------
+account 29:Francois Garillot
+@huitseeker
+Following
+Dabbling with streams, distributed data, in close proximity to . Co-author http://shop.oreilly.com/product/063692…
+---------------------------------------
+account 30:Han Jian
+@han__0110
+Following
+---------------------------------------
+account 31:Lurk
+@LurkLab
+Following
+Lurk is a Turing-complete programming language for recursive zk-SNARKs. It is a statically scoped dialect of Lisp, influenced by Scheme and Common Lisp.
+---------------------------------------
+account 32:Porçu Quine
+@porcuquine2
+Following
+Led Filecoin Proofs team to launch. Created Turing-complete SNARK language (
+@LurkLab
+).
+---------------------------------------
+account 33:Zach Wong
+@mud2monarch
+Following
+Former Cantillon Insider, now
+@circle
+// all views my own
+---------------------------------------
+account 34:lcfr.eth
+@lcfr_eth
+Following
+@ensvision
+---- http://lcfr.eth.limo previously: admin @ the internet
+---------------------------------------
+account 35:payload.de
+@payload_de
+Following
+Ethereum Block Builder Protection from frontrunning & sandwich attacks Block Value Analytics: https://payload.de/data RPC Endpoint: http://rpc.payload.de
+---------------------------------------
+account 36:Nass Eddequiouaq
+@nassyweazy
+Following
+Blockchain Infra & Security // prev. Chief Security Officer
+@a16z
+crypto,
+@Facebook
+Blockchain (Novi),
+@Anchorage
+,
+@Docker
+,
+@Apple
+---------------------------------------
+account 37:Daniel Cohen Hillel
+@0xDACA
+Following
+I had a good bio but people were complaining...
+---------------------------------------
+account 38:kankodu
+@kankodu
+Following
+Auditor
+@warRoomAudits
+Whitehat ranked #17
+@immunefi
+Security Resercher
+@SpearbitDAO
+---------------------------------------
+account 39:zhenfei
+@zhenfei_zhang
+Following
+I code regularly, twit occasionally.
+---------------------------------------
+account 40:DRPC.eth
+@drpcorg
+Following
+Reliable, Scalable & Cost-efficient RPC solution for EVM-based networks. Get performance degradation resistance & fallbacks from the box! Join us: http://drpc.org
+---------------------------------------
+account 41:khurram.eth
+@KhurramDara
+Following
+reg/policy
+@baincapcrypto
+prev:
+@coinbase
+@airswap
+@orrick
+/ go bills / views my own
+---------------------------------------
+account 42:Jon Charbonneau
+@jon_charb
+Following
+Co-founder
+@dba_crypto
+| Lower-case r research
+---------------------------------------
+account 43:sasuke420
+@sasuke___420
+Following
+CEO
+@LTCM_
+Shadowy super coder
+@foresightmkt
+DMs open
+---------------------------------------
+account 44:Igor Igamberdiev
+@FrankResearcher
+Following
+Head of Research at
+@wintermute_t
+, Research Collaborator at
+@paradigm
+, ex
+@TheBlock__
+𝝪(𝞂ₜ, 𝝩) → 𝞂ₜ₊₁ Views are my own
+---------------------------------------
+account 45:0x5F3759DF
+@lostbutlucky
+Following
+crypto soothe teller
+---------------------------------------
+account 46:Gwart
+@GwartyGwart
+Following
+Just because Beanie Babies crashed in value, doesn’t mean that stuffed animals weren’t going to be important.
+---------------------------------------
+account 47:K Kulkarni
+@ks_kulk
+Following
+Ph.D. student
+@berkeley_eecs
+. Research
+@gauntletnetwork
+. Geometry, dynamics, markets & intelligence.
+---------------------------------------
+account 48:Seraphim
+@MacroMate8
+Following
+Head of Taking Risk | DeFi Expansionist at
+@lidofinance
+| Contributor to
+@unsheth_xyz
+| Ambassador at
+@vertex_protocol
+---------------------------------------
+account 49:0xprincess
+@0x9212ce55
+Following
+mev extracting unicorn | co-founder
+@neoc10n
+---------------------------------------
+account 50:olaf
+@zxocw
+Following
+founder
+@polychain
+---------------------------------------
+account 51:Remco Bloemen
+@recmo
+Following
+𝔎𝔩𝔬𝔱𝔷𝔨𝔢𝔱𝔱𝔢𝔫𝔣𝔞𝔠𝔥𝔪𝔞𝔫𝔫 at Worldcoin | Prev. 0x | wick.eth | bicycle maximalist
+---------------------------------------
+account 52:Josh Cincinnati
+@acityinohio
+Following
+Renersatz Man
+---------------------------------------
+account 53:Mustafa Al-Bassam
+@musalbas
+Following
+Trust-minimization engineer. Co-founder of
+@CelestiaOrg
+and CEO of Celestia Labs. Modularism, not maximalism.
+---------------------------------------
+account 54:Keone
+@keoneHD
+Following
+cofounder
+@monad_xyz
+, dog lover, previously HFT quant/eng at Jump, MIT 2011
+---------------------------------------
+account 55:Matteo Leibowitz
+@teo_leibowitz
+Following
+ventures lead
+@Uniswap
+//
+@UniswapLabsVC
+---------------------------------------
+account 56:Will Sheehan
+@wilburforce_
+Following
+Founder
+@parsec_finance
+recovering quant, distracted by DeFi
+---------------------------------------
+account 57:Andrew Miller
+@socrates1024
+Following
+oblivious - sabbatical UIUC - building ZK credit network - MEV intern - SUAVE is real and strong and is my friend - http://socrates1024.bsky.social
+---------------------------------------
+account 58:Joe | 0xOsprey.eth
+@0x_Osprey
+Following
+Personal views - not investment advice - may have positions in assets discussed - opinions may be satire - reality may be simulated - Principal
+@hiFramework
+---------------------------------------
+account 59:bookdepth
+@bookdepth
+Following
+adversely selected against in the marketplace of ideas
+---------------------------------------
+account 60:refcell
+@refcells
+Following
+scaling hyperstructures ⛊ client work
+@oplabspbc
+---------------------------------------
+account 61:Sebastien La Duca
+@sebastienladuca
+Following
+small field snark enjoyoor | building
+@nocturne_xyz
+| prev
+@solana
+,
+@facebook
+,
+@CMU_ECE
+---------------------------------------
+account 62:Markov
+@MarkovMagnifico
+Following
+spreading love and shitposts in equal measure. tryna keep my karma balanced
+---------------------------------------
+account 63:Ali Ghodsi
+@alighodsi
+Following
+Databricks CEO & Co-founder, UC Berkeley Faculty
+---------------------------------------
+account 64:SMG
+@specialmech
+Following
+We enable fair and open markets through breakthrough mechanism design.
+---------------------------------------
+account 65:Frontier Research
+@FrontierDotTech
+Following
+Frontier Research is an independent research and advisory group formed to bridge the gap between fundamental research and commercial products.
+---------------------------------------
+account 66:Jeffrey Ely
+@Jeffely
+Following
+They kept protesting that I was trying to have it both ways. But there are at least 5 or 6 other ways I am also trying to have it.
+---------------------------------------
+account 67:DaniPopes
+@DaniPopes
+Following
+rust
+---------------------------------------
+account 68:s
+@idoccor
+Following
+, C++, HFT (trad+crypto CEX), digital video software back when Lifehouse was "cool"
+---------------------------------------
+account 69:Francois Garillot
+@huitseeker
+Following
+Dabbling with streams, distributed data, in close proximity to . Co-author http://shop.oreilly.com/product/063692…
+---------------------------------------
+account 70:Han Jian
+@han__0110
+Following
+---------------------------------------
+account 71:Lurk
+@LurkLab
+Following
+Lurk is a Turing-complete programming language for recursive zk-SNARKs. It is a statically scoped dialect of Lisp, influenced by Scheme and Common Lisp.
+---------------------------------------
+account 72:Porçu Quine
+@porcuquine2
+Following
+Led Filecoin Proofs team to launch. Created Turing-complete SNARK language (
+@LurkLab
+).
+---------------------------------------
+account 73:Zach Wong
+@mud2monarch
+Following
+Former Cantillon Insider, now
+@circle
+// all views my own
+---------------------------------------
+account 74:lcfr.eth
+@lcfr_eth
+Following
+@ensvision
+---- http://lcfr.eth.limo previously: admin @ the internet
+---------------------------------------
+account 75:payload.de
+@payload_de
+Following
+Ethereum Block Builder Protection from frontrunning & sandwich attacks Block Value Analytics: https://payload.de/data RPC Endpoint: http://rpc.payload.de
+---------------------------------------
+account 76:Nass Eddequiouaq
+@nassyweazy
+Following
+Blockchain Infra & Security // prev. Chief Security Officer
+@a16z
+crypto,
+@Facebook
+Blockchain (Novi),
+@Anchorage
+,
+@Docker
+,
+@Apple
+---------------------------------------
+account 77:Daniel Cohen Hillel
+@0xDACA
+Following
+I had a good bio but people were complaining...
+---------------------------------------
+account 78:kankodu
+@kankodu
+Following
+Auditor
+@warRoomAudits
+Whitehat ranked #17
+@immunefi
+Security Resercher
+@SpearbitDAO
+---------------------------------------
+account 79:zhenfei
+@zhenfei_zhang
+Following
+I code regularly, twit occasionally.
+---------------------------------------
+account 80:DRPC.eth
+@drpcorg
+Following
+Reliable, Scalable & Cost-efficient RPC solution for EVM-based networks. Get performance degradation resistance & fallbacks from the box! Join us: http://drpc.org
+---------------------------------------
+
+account 81:MariusVanDerWijden
+@vdWijden
+Following
+Developer
+@Ethereum
+, working on
+@go_ethereum
+, vdwijden.eth
+---------------------------------------
+account 82:alex
+@ObadiaAlex
+Following
+previously @ http://flashbots.net
+---------------------------------------
+account 83:Dev
+@valardragon
+Following
+Co-Founder of
+@SikkaTech
+| Contributor of
+@Cosmos
+&
+@OsmosisZone
+&
+@arkworks_rs
+| I CTF with sice squad/ dice gang
+---------------------------------------
+account 84:bita del rey
+@_b33ts
+Following
+currently:
+@scrib3_co
+// previously:
+@gauntletnetwork
+// a (pending) billionaire // FREE IRAN
+---------------------------------------
+account 85:vex
+@vex_0x
+Following
+pretend racecar driver. bit twiddling
+@OPLabsPBC
+. contributing
+@huff_language
+.
+---------------------------------------
+account 86:Guillaume Lambert | lambert.eth |
+@guil_lambert
+Following
+Founder of
+@panoptic_xyz
+&
+@yewbow_
+| Asst Prof in Applied Physics at
+@Cornell
+.
+---------------------------------------
+account 87:Tim Roughgarden
+@Tim_Roughgarden
+Following
+Head of Research
+@a16z
+. Prof
+@Columbia
+. Theoretical computer scientist. Educator. Wrote Algorithms Illuminated, 20 Lectures on Algorithmic Game Theory, etc.
+---------------------------------------
+account 88:Norswap
+@norswap
+Following
+Perpetual soldier of fortune, occasional internet slacker. Ex R&D
+@OPLabsPBC
+, I mostly talk about blockchain tech.
+---------------------------------------
+account 89:alpharush
+@0xalpharush
+Following
+(semi) automated bug enthusiast
+@trailofbits
+---------------------------------------
+account 90:Byzantine General
+@ByzGeneral
+Following
+Cartoon tiger pressing buttons. Ambassador for
+@vertex_protocol
+&
+@plutus
+.
+---------------------------------------
+account 91:Ricky Moezinia
+@_ricky_mo
+Following
+something new
+---------------------------------------
+account 92:Nelson Angeris
+@NelsonAngeris
+Following
+---------------------------------------
+account 93:lightspeed mert | helius.dev
+@0xMert_
+Following
+ceo
+@heliuslabs
+, co-host
+@lightspeedpodhq
+, ex
+@coinbase
+— I like debating crypto, fast machines, and empiricism
+---------------------------------------
+account 94:Daniel.T
+@mr_dddt
+Following
+build
+@verilog_audit
+|| security engineer || aviation geek ||
+@doodles
+doodler ||
+@SappySealsNFT
+Navy Seal ||
+---------------------------------------
+account 95:Matt Walsh
+@MattWalshInBos
+Following
+General Partner,
+@CastleIslandVC
+Co-Host
+@OnTheBrinkCIV
+podcast Weekly Newsletter: http://eepurl.com/dDKQuf
+---------------------------------------
+account 96:0xEd
+@happenwah
+Following
+Builder of
+@valantislabs
+. Previously
+@nethermindeth
+@gelatonetwork
+.
+---------------------------------------
+account 97:Sam Jernigan
+@sjerniganIV
+Following
+---------------------------------------
+account 98:Titan Builder
+@titanbuilderxyz
+Following
+New builder on the block(chain) Bundles: http://rpc.titanbuilder.xyz Docs: http://titanbuilder.xyz/docs Discord: https://discord.gg/hnerZ7dhTk
+---------------------------------------
+account 99:paulgrewal.eth
+@iampaulgrewal
+Following
+Chief Legal Officer
+@coinbase
+. I talk a little crypto, a lot of law, and way too much Ohio sports.
+---------------------------------------
+account 100:AirGap
+@AirGap_it
+Following
+Self custody made simple and secure. Turn a spare smartphone into a cold wallet. AirGap by
+@PapersDev
+Get Support: http://airgap.it/help-center/
+---------------------------------------
+account 101:Toby Nangle
+@toby_n
+Following
+London & Stroud. “Veteran” fund manager.
+@resfoundation
+associate. Anti-anti-woke.
+@FGRFC_Official
+fan. I’m
+@tobyn
+at the other place.
+---------------------------------------
+account 102:moBl0cks.eth
+@its_mobeen
+Following
+Solutions engineer / research
+@blocknative
+kb7
+---------------------------------------
+account 103:A.J. Warner (,)
+@ajwarner90
+Following
+Building the future of Ethereum
+@offchainlabs
+with my smol brain big body | Food-lover | Most importantly #budsallday
+---------------------------------------
+account 104:miri
+@0xmiri
+Following
+evm
+---------------------------------------
+account 105:Sorella Labs
+@SorellaLabs
+Following
+A new kind of on-chain market maker.
+---------------------------------------
+account 106:Brianna (bri.eth)
+@zkBri
+Following
+strategy
+@eigenlayer
+prev. Founding team
+@feiprotocol
+,
+@ConsenSys
+@ConsenSysAudits
+---------------------------------------
+account 107:Georgios Konstantopoulos
+@gakonst
+Following
+very greek accent. cto & research partner
+@paradigm
+. optimist and rustacean // we're hiring - dm if you wanna work together on hard internal eng problems
+---------------------------------------
+account 108:Mark Bun
+@markmbun
+Following
+---------------------------------------
+account 109:13 year old intern EthCC
+@13yearoldvc
+Following
+a peanut
+---------------------------------------
+account 110:Cantor’s Paradise
+@Cantor_Paradise
+Following
+The #1 Math Publication on
+@Medium
+---------------------------------------
+account 111:Senator Cynthia Lummis
+@SenLummis
+Following
+U.S. Senator from Wyoming/Space Junk Lady Lummis rhymes with hummus
+---------------------------------------
+account 112:Joey Krug
+@joeykrug
+Following
+Partner at
+@FoundersFund
+Cofounder at
+@Eco
+&
+@AugurProject
+joey@foundersfund.com for decks/dealflow
+---------------------------------------
+account 113:KALI
+@kali__gg
+Following
+governance completed deploy a dao: http://app.kali.gg v2 - multisig: http://keep.kali.gg/create http://wrappr.wtf
+---------------------------------------
+account 114:asn
+@asn_d6
+Following
+Thoughtleading central
+---------------------------------------
+account 115:0xScope ( . )
+@ScopeProtocol
+Following
+First-ever Web3 Knowledge Graph Protocol: http://0xscope.com Entity-based Web3 analytics tool: http://watchers.pro Free on-chain alerts:
+@0xWatchers
+---------------------------------------
+account 116:Jason H. Lu
+@JHL_Express
+Following
+Building autonomous drones. Cofounder Flyby Robotics. Aviation & space nerd. studied stuff
+@yale
+.
+---------------------------------------
+account 117:efabless.com
+@efabless
+Following
+ASIC DESIGN REDEFINED
+---------------------------------------
+account 118:tai.money
+@taimoney6
+Following
+Low interest loans against ETH and ETH LSDs. Rewards to minters and liquidity providers http://Tai.money http://discord.gg/hAmSqrJCWh
+---------------------------------------
+api_key:nViaMYTgKVdP3rtIBlkEvDrqu
+api_secret:GjzjsaknMi1WdjvakxsavBYsJ9D4Kzg1oXwEAwicqCG01IFcQ2
+bearer_token:AAAAAAAAAAAAAAAAAAAAAKbcoQEAAAAAWpHsptjzCgHdr%2BxhZ0mkXovRsnA%3DzGZlDG9JxFRPkkeOeEbTudXsDb4K2ZbrgcPQ6TDjcciUps3OkT
+access_token:1673409364160311309-ouizvNTta3WcmDxrF96tHPZNlHASp4
+access_token_secret:mO41c3beZffwHpxpIIxqUgBbC0oBpwwMNxgA6D5qY0j2P
+
+
+
+client:cEdyOTBQQXQ1aDJNRnVGdEZaamY6MTpjaQ
+client_secret:6JsZ17oI7Pw11EHgPmu4tRBTWRFzE2V60dqCTLKseDHEQlPec1
