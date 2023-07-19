@@ -37,10 +37,17 @@ inputUser = '//*[@id="layers"]/div/div/div/div/div/div/div[2]/div[2]/div/div/div
 user ='kdb22222'
 username = 'kdb22222'
 passwrd = '2012201994'
+listBtn ='/html/body/div[1]/div/div/div[2]/main/div/div/div/div[1]/div/div[1]/div[1]/div/div/div/div/div/div[3]/div/a'
 nextBtn = '//*[@id="layers"]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div/div/div/div[6]/div'
 inputPass ='//*[@id="layers"]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[1]/div/div/div[3]/div/label/div/div[2]/div[1]/input'
 logInBtn = '//*[@id="layers"]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[1]/div/div/div'
 tweetBtn ='//*[@id="react-root"]/div/div/div[2]/header/div/div/div/div[1]/div[3]/a'
+searchPeopleBox = '/html/body/div[1]/div/div/div[1]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[2]/div/div/form/div[1]/div/div/div/label/div[2]/div[2]/div/span'
+addBtnList = '/html/body/div[1]/div/div/div[1]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[2]/section/div/div/div/div/div[1]/div/div/div/div/div[2]/div[1]/div[2]'
+doneLisatBtn="/html/body/div[1]/div/div/div[1]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[1]/div/div/div/div/div/div[3]/div/div/span/span"
+listNextBtn = '/html/body/div[1]/div/div/div[1]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[1]/div/div/div/div/div/div[3]/div/div/span/span'
+nameInput = '/html/body/div[1]/div/div/div[1]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[2]/div[2]/label/div/div[2]/div/input'
+descriptionBox = '/html/body/div[1]/div/div/div[1]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[2]/div[3]/label/div/div[2]/div/textarea'
 textBox = '//*[@id="layers"]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[3]/div[2]/div[1]/div/div/div/div[1]/div[2]/div/div/div/div/div/div/div[2]/div/div/div/div/label/div[1]/div/div/div/div/div/div[2]/div'
 def logIn_Credentials(cred_user,cred_password):
     # create instance of Chrome webdriver
@@ -148,3 +155,19 @@ def tweets(tweetToSend):
 def create_tweet(followList):
     print("I'm inside create_tweet()",followList)
     return f'Tweet: {followList}'
+@app.route("/api/createList/<path:list>")
+def create_list(list):
+    driver = logIn()
+    driver.get("https://twitter.com/"+user+"/lists")
+    time.sleep(2)
+    driver.find_element(by='xpath',value=listBtn).click()
+    time.sleep(2)
+    driver.find_element(by='xpath',value=nameInput).send_keys('test')
+    driver.find_element(by='xpath',value=descriptionBox).send_keys('test description')
+    driver.find_element(by='xpath',value=listNextBtn).click()
+    time.sleep(2)
+    driver.find_element(by='xpath',value=doneLisatBtn).click()
+    driver.close()
+
+    print("I'm inside create_list()",list)
+    return f'Tweet: {list}',driver

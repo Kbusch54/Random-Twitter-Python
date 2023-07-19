@@ -2,6 +2,48 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 import time
+import pytz
+from datetime import datetime
+from supabase import create_client, Client
+
+
+
+
+class Account:
+    def __init__(self, account, username, description):
+        self.account = account
+        self.username = username
+        self.description = description
+        self.followed_by = []
+
+    def add_follower(self, follower):
+        if follower not in self.followed_by:
+            self.followed_by.append(follower)
+
+    def get_info(self):
+        return {
+            'account': self.account,
+            'username': self.username,
+            'description': self.description,
+            'followed_by': self.followed_by
+        }
+    
+
+
+
+dbUser='postgres'
+dbPassword='C12veEutvfQzE2y9'
+dbPort="5432"
+dbHost = 'db.utvsxgfogcixgkztnvxo.supabase.co'
+dbdDatabase='postgres'
+def print_all_accounts(accounts_dict):
+    for account in accounts_dict.values():
+        info = account.get_info()
+        print(f"Account: {info['account']}")
+        print(f"Username: {info['username']}")
+        print(f"Description: {info['description']}")
+        print(f"Followed by: {', '.join(info['followed_by'])}")
+        print('-------')
 inputUser = '//*[@id="layers"]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div/div/div/div[5]/label/div/div[2]/div/input'
 user ='kdb22222'
 username = 'kdb22222'
@@ -13,181 +55,239 @@ followingDiv = '//*[@id="react-root"]/div/div/div[2]/main/div/div/div/div[1]/div
 followBtn = 'css-18t94o4.css-1dbjc4n.r-42olwf.r-sdzlij.r-1phboty.r-rs99b7.r-15ysp7h.r-4wgw6l.r-1ny4l3l.r-ymttw5.r-o7ynqc.r-6416eg.r-lrvibr'
 logInBtn = '//*[@id="layers"]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[1]/div/div/div'
 user1 = '//*[@id="react-root"]/div/div/div[2]/main/div/div/div/div[1]/div/section/div/div/div/div/div[1]/div/div/div/div/div[2]/div[1]/div[1]/div/div[2]/div'
-# create instance of Chrome webdriver
-driver = webdriver.Chrome() 
-driver.get("https://twitter.com/login")
-    # adjust the sleep time according to your internet speed
-time.sleep(2)
-# find the element where we have to 
-# enter the xpath
-# driver.find_element.__getattribute__
-# fill the number or mail
-driver.find_element(
-    by='xpath', value=inputUser).send_keys(user)
-# find the element next button 
-# request using xpath 
-# clicking on that element 
-driver.find_element(
-    by='xpath',
-    value=nextBtn).click()
+listBtn ='/html/body/div[1]/div/div/div[2]/main/div/div/div/div[1]/div/div[1]/div[1]/div/div/div/div/div/div[3]/div/a'
+nextBtn = '//*[@id="layers"]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div/div/div/div[6]/div'
+inputPass ='//*[@id="layers"]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[1]/div/div/div[3]/div/label/div/div[2]/div[1]/input'
+logInBtn = '//*[@id="layers"]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[1]/div/div/div'
+tweetBtn ='//*[@id="react-root"]/div/div/div[2]/header/div/div/div/div[1]/div[3]/a'
+nameInput='/html/body/div[1]/div/div/div[1]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[2]/div[2]/label/div/div[2]/div/input'
+descriptionBox = '/html/body/div[1]/div/div/div[1]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[2]/div[3]/label/div/div[2]/div/textarea'
+searchPeopleBox = '/html/body/div[1]/div/div/div[1]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[2]/div/div/form/div[1]/div/div/div/label/div[2]/div[1]/input'
 
-# adjust the sleep time according to your internet speed
-time.sleep(2)
-# # if(driver.find_element(By.XPATH,'//*[@id="layers"]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[1]/div/div[2]/label/div/div[2]/div/input')):
-# driver.find_element(By.CLASS_NAME,'r-30o5oe.r-1niwhzg.r-17gur6a.r-1yadl64.r-deolkf.r-homxoj.r-poiln3.r-7cikom.r-1ny4l3l.r-t60dpp.r-1dz5y72.r-fdjqy7.r-13qz1uu').send_keys(username)
-# time.sleep(2)
-# driver.find_element(By.CLASS_NAME,'css-901oao.r-1awozwy.r-jwli3a.r-6koalj.r-18u37iz.r-16y2uox.r-37j5jr.r-a023e6.r-b88u0q.r-1777fci.r-rjixqe.r-bcqeeo.r-q4m81j.r-qvutc0').click()
-# time.sleep(2)
 
-# find the element where we have to 
-# enter the xpath
-# fill the password
-driver.find_element(
-    by='xpath',value=inputPass).send_keys(passwrd)
-# find the element login button
-# request using xpath
-# clicking on that element
-driver.find_element(by='xpath',value=logInBtn).click()
-# adjust the sleep time according to your internet speed
-time.sleep(2)
-driver.get("https://twitter.com/DaveHsu")
-# find the element where we have to
-# enter the xpath
-time.sleep(2)
-followingNumber = driver.find_element(by='xpath',value=followingNum)
-print('followingNum',followingNumber.text)
-follwmeeee = followingNumber.text
-time.sleep(2)
+addBtnList = '/html/body/div[1]/div/div/div[1]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[2]/div/div/form/div[2]/div/div[2]/div/div/div/div[2]/div/div[2]/div/span/span'
+usedSerachPeople = '/html/body/div[1]/div/div/div[1]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[2]/div/div/form/div[1]/div/div/div/label/div[3]/div'
 
-# new driver new url
-driver.get("https://twitter.com/DaveHsu/following")
-time.sleep(2)
-# Determine the height of the viewport
-viewport_height = driver.execute_script("return window.innerHeight")
+doneLisatBtn="/html/body/div[1]/div/div/div[1]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[1]/div/div/div/div/div/div[3]/div/div/span/span"
+listNextBtn = '/html/body/div[1]/div/div/div[1]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[1]/div/div/div/div/div/div[3]/div/div/span/span'
+doubled = set()
+all_accounts = {}
+inDb = set()
+url: str = 'https://utvsxgfogcixgkztnvxo.supabase.co'
+key: str = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InV0dnN4Z2ZvZ2NpeGdrenRudnhvIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODc4ODg3MTIsImV4cCI6MjAwMzQ2NDcxMn0.6gKLbDZ3EE85lnlvAmQWzCHuD4HNjVFNZYgcnzAGqX0'
+supabase: Client = create_client(url, key)
 
-# Determine the height of the entire document
-document_height = driver.execute_script("return document.documentElement.scrollHeight")
-
-# Calculate the number of scrolls needed
-num_scrolls = document_height // viewport_height
-# Capture elements after each scroll
-captured_elements = []
-full_captured_elements = []
-fullaccount = []
-faill = 0
-iterator = 104
-# with open("davhsu.txt", "r",encoding="utf-8") as file:
-    # lines = file.readlines()
-    # iterator = int(lines[3])  # Ind
-with open("davhsu.txt", "a",encoding="utf-8") as file:
-    # file.write('---------------------------------------')
-    # file.write('\n')
-    # file.write(' Accounts followed by DaveHsu')
-    # file.write(follwmeeee)
-    # file.write('\n')
-    # file.write('---------------------------------------')
-    # while len(captured_elements) < int(250):
-    #     # if len(captured_elements) > 1: driver.refresh()
-    #     # print('captured elements',len(captured_elements))
-    #     driver.refresh()
-    #     time.sleep(3)
-    #     if(len(full_captured_elements) >= int(250)):driver.quit()
-        # if len(captured_elements) > 1: 
-        #     driver.close()
-        #     time.sleep(5)
+def get_All_Tracked():
     try:
-        for _ in range(num_scrolls):
-            # Scroll down to the bottom
-            driver.execute_script("window.scrollBy(0, arguments[0])", viewport_height)
-            # Capture the elements
-            elemnt = driver.find_element(
-            by='xpath',
-            value=followingDiv
-            )
-            time.sleep(1)
-            accounts = elemnt.find_elements(By.CSS_SELECTOR, '.css-1dbjc4n.r-18u37iz')
-            for e in accounts:
-                if(e.text.startswith('@')):
-                    if e.text in captured_elements:
-                        continue
-                    captured_elements.append(e.text)
+        accounts = supabase.table('Tracking').select("account").execute()
+        return accounts
+    except (Exception) as error:
+        print ("Error while connecting to PostgreSQL", error)
+    finally:
+        if(accounts):
+            print("PostgreSQL connection is closed")
+def get_all_accounts():
+    try:
+        accounts = supabase.table('Followed').select("*").execute()
+        
+        return accounts.data
+    except (Exception) as error:
+        print ("Error while connecting to PostgreSQL", error)
+    finally:
+        if(accounts):
+            print("PostgreSQL connection is closed")
+def update_or_insert(account, username, description, followed_by):
+    try:
+        if account in inDb:
+            supabase.table('Followed').update({
+                'followed_by': followed_by,
+                'updated_at': datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            }).eq('account', account).execute()
+        else:
+            supabase.table('Followed').insert({
+                'account': account,
+                'username': username,
+                'description': description,
+                'followed_by': followed_by,
+                'created_at': datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            }).execute()
+    except (Exception) as error:
+        print ("Error while connecting to PostgreSQL", error)
+    finally:
+        if(accounts):
+            print("PostgreSQL connection is closed and completed")
 
-            fullacc = elemnt.find_elements(By.CSS_SELECTOR, '[data-testid="cellInnerDiv"]')
-            # folowbt =elemnt.find_elements(By.CLASS_NAME,followBtn)
+def twitter_log_in():
+    # create instance of Chrome webdriver
+    driver = webdriver.Chrome() 
+    driver.get("https://twitter.com/login")
+        # adjust the sleep time according to your internet speed
+    time.sleep(2)
+    # find the element where we have to 
+    # enter the xpath
+    # driver.find_element.__getattribute__
+    # fill the number or mail
+    driver.find_element(
+        by='xpath', value=inputUser).send_keys(user)
+    # find the element next button 
+    # request using xpath 
+    # clicking on that element 
+    driver.find_element(
+        by='xpath',
+        value=nextBtn).click()
 
-            # for e in folowbt:
-            #     e.click()
-            for e in fullacc:
-                if isinstance(e, webdriver.remote.webelement.WebElement): 
-                    time.sleep(2)
-                    if e.text in fullaccount:
-                        continue
-                    fullaccount.append(e.text)
-                    try:
-                        follll =e.find_element(By.CLASS_NAME,followBtn)
-                        if(follll): print('following')
-                        # follll.click()
-                        driver.execute_script("arguments[0].click();", follll)
-                        if(iterator % 2 == 0):time.sleep(3)
-                        time.sleep(3)
-                        # if(e.text == 'follow'):e.click()
-                        # print('\n\n\n','account', iterator,':',e.text,'\n','---------------------------------------')
-                        file.write('\n')
-                        file.write('account ')
-                        file.write(str(iterator))
-                        file.write(':')
-                        file.write(e.text)
-                        file.write('\n')
-                        file.write('---------------------------------------')
-                        iterator+=1
-                        # lines = file.readlines()
-                        # lines[3] = str(iterator)
-                        faill = 0
-                    except:
-                        print('no follow btn')
-                        faill+=1
-                        if(faill == 44):
-                            driver.refresh()
-                            faill = 0
-                            print('refresh')
-                            time.sleep(3)
-                        continue
-            full_captured_elements.extend(captured_elements)
-            print('captured elements',captured_elements)
-            file.write('\n')
-            file.write('---------------------------------------')
-            file.write('\n')
-            file.write('full accounts')
-            file.write(str(full_captured_elements))
-            # print('in accounts',e.text)
-        #  print('fullAcc ',len(captured_elements),':',e.text)
-# # Scroll down the page
-    except:
-        print('error')
-        driver.quit()
-# driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-# time.sleep(2)
-# following2 = elemnt.find_elements(By.CSS_SELECTOR, '.css-4rbku5.css-18t94o4.css-1dbjc4n.r-1loqt21.r-1wbh5a2.r-dnmrzs.r-1ny4l3l')
-# following.extend(following2)
-#    toWrite = 'Account ',iterator,': '
-#         f.write(toWrite)
-#         f.write(e.text)
-#         f.write('\n')
-#         f.write('---------------------------------------')
-#         f.write('\n')
-num = 1
-# print('captured elements',captured_elements)
-# for e in  captured_elements:
+    # adjust the sleep time according to your internet speed
+    time.sleep(2)
+
+    # find the element where we have to 
+    # enter the xpath
+    # fill the password
+    driver.find_element(
+        by='xpath',value=inputPass).send_keys(passwrd)
+    # find the element login button
+    # request using xpath
+    # clicking on that element
+    driver.find_element(by='xpath',value=logInBtn).click()
+    # adjust the sleep time according to your internet speed
+    time.sleep(2)
+    return driver
+
+def get_following(driver,trackers):
+    for tracked in trackers:
+        # new driver new url
+        url = f"https://twitter.com/{tracked}/following"
+        driver.get(url)
+        time.sleep(2)
+        # Determine the height of the viewport
+        viewport_height = driver.execute_script("return window.innerHeight")
+
+        # Determine the height of the entire document
+        document_height = driver.execute_script("return document.documentElement.scrollHeight")
+
+        # Calculate the number of scrolls needed
+        num_scrolls = document_height // viewport_height
     
-#     # if(e.text.startswith('@')):
-#     print(num,' acc:',e)
-#     num+=1
-driver.quit()     
-# for e in following2:
+        # with open("davhsu.txt", "r",encoding="utf-8") as file:
+            # lines = file.readlines()
+            # iterator = int(lines[3])  # Ind
     
-#     if(e.text.startswith('@')):
-#         print(num,' acc:',e.text)
-#         num+=1
+        try:
+            seen = set()
+            for _ in range(num_scrolls):
+                time.sleep(1)
+                # Scroll down to the bottom
+                driver.execute_script("window.scrollBy(0, arguments[0])", viewport_height)
+                # Capture the elements
+                elemnt = driver.find_element(
+                by='xpath',
+                value=followingDiv
+                )
+                # accounts = elemnt.find_elements(By.CSS_SELECTOR, '.css-1dbjc4n.r-18u37iz')
+                fullacc = elemnt.find_elements(By.CSS_SELECTOR, '[data-testid="cellInnerDiv"]')
+                time.sleep(1)
+                for e in fullacc:
+                    if isinstance(e, webdriver.remote.webelement.WebElement): 
+                        try:
+                            usernameForAcc = e.text[0:e.text.find('@')]
+                            accountName = e.text[e.text.find('@'):e.text.find('Follow')-1]
+                            if accountName in seen or accountName == '':
+                                continue
+                            description = e.text[e.text.find('Follow'):].replace('Follow\n','',1)
+                            if description == '':
+                                seen.add(accountName)
+                                continue
+                            if accountName in doubled:
+                                acc = all_accounts[accountName]
+                                acc.add_follower(tracked)
+                                all_accounts[accountName] = acc
+                            else:
+                                acc = Account(accountName, usernameForAcc, description)
+                                acc.add_follower(tracked)
+                                all_accounts[accountName] = acc
+                            seen.add(accountName)
+                            doubled.add(accountName)
+                        except Exception as e:
+                            # print('error FOR BOBBY JONES')
+                            continue  
+        except:
+            print('complete')
+            driver.quit()
+            break
+def add_accounts_to_db():
+    for account in all_accounts.values():
+        username = account.username
+        description = account.description
+        followed_by = account.followed_by
+        accounts = account.account
+        update_or_insert(accounts, username, description, followed_by)
+# accounts = get_all_accounts()
+# for account in accounts:
+#     acc = Account(account['account'], account['username'], account['description'])
+#     acc.followed_by = account['followed_by']
+#     all_accounts[account['account']] = acc
+#     doubled.add(account.accountName)
+#     inDb.add(account.accountName)
 
+def add_list(usersToAdd):
+    driver = twitter_log_in()
+    time.sleep(2)
+    # get_following(driver,tracking)
+    driver.get("https://twitter.com/"+user+"/lists")
+    time.sleep(2)
+    driver.find_element(by='xpath',value=listBtn).click()
+    time.sleep(2)
+    eastern = pytz.timezone('US/Eastern')
+    eastern_time = datetime.now(eastern)
+    # Define the Eastern Time Zone
+    eastern = pytz.timezone('US/Eastern')
+
+    # Get the current time in Eastern Time Zone
+    eastern_time = datetime.now(eastern)
+
+    # Format the time in 'HH:MM AM/PM' format
+    hour_am_pm = eastern_time.strftime('%I:%M %p')
+    print(hour_am_pm)
+    print(datetime.now().strftime("%Y-%m-%d %H:%M")+hour_am_pm)
+    driver.find_element(by='xpath',value=nameInput).send_keys('Joes list '+datetime.now().strftime("%m-%d ")+hour_am_pm)
+    driver.find_element(by='xpath',value=descriptionBox).send_keys('Twitter list to follow for joe '+datetime.now().strftime("%Y-%m-%d %H:%M"))
+    time.sleep(2)
+    driver.find_element(by='xpath',value=listNextBtn).click()
+    time.sleep(2)
+    for users in usersToAdd:
+        driver.find_element(by='xpath',value=searchPeopleBox).send_keys(users)
+        time.sleep(3)
+        addMe = driver.find_element( by=By.XPATH,value=addBtnList)
+        driver.execute_script("arguments[0].click();", addMe)
+        time.sleep(3)
+        driver.find_element(by='xpath',value=usedSerachPeople).click()
+        time.sleep(2)
+    driver.find_element(by='xpath',value=doneLisatBtn).click()
+    driver.close() 
+# trackers = get_All_Tracked()
+# tracking = []
+# for tracked in trackers.data:
+#     tracking.append(tracked['account'])
+# if(len(tracking) == 0):
+#     print('No accounts to track')
+#     exit()
+
+# add_accounts_to_db()
+add_list(['@therealKbusch','@elonmusk','@KyleBuschFans','@trump'])
+
+# eastern = pytz.timezone('US/Eastern')
+# eastern_time = datetime.now(eastern)
+# # Define the Eastern Time Zone
+# eastern = pytz.timezone('US/Eastern')
+
+# # Get the current time in Eastern Time Zone
+# eastern_time = datetime.now(eastern)
+
+# # Format the time in 'HH:MM AM/PM' format
+# hour_am_pm = eastern_time.strftime('%I:%M %p')
+# print(hour_am_pm)
+# print(datetime.now().strftime("%Y-%m-%d %H:%M")+hour_am_pm)
+
+print('printing all accounts')
+print_all_accounts(all_accounts)
 
 
