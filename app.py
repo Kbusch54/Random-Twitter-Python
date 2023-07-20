@@ -542,8 +542,6 @@ def schedule_run_cycle():
     scheduler.start()
 
 
-app == Flask(__name__)
+app = Flask(__name__)
+start_process()
 schedule_run_cycle()
-if __name__ == "__main__":
-    app.run(debug=True)
-    start_process()
