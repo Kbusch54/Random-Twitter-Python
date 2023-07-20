@@ -113,7 +113,18 @@ class Account:
             'description': self.description,
             'followed_by': self.followed_by
         }
-    
+length = 0
+def update_last_num(amt):
+    try:
+        supabase.table('sign').update({
+            'last_updated': datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+            'new_amount': amt
+        }).eq('id', 2).execute()
+    except (Exception) as error:
+        print ("Error while connecting to PostgreSQL", error)
+    finally:
+        if(amt):
+            print("Added to Database") 
 def remove_at_sign(usersToAdd):
     return [user.replace("@", "") for user in usersToAdd]
 def logIn_Credentials(cred_user,cred_password):
@@ -278,7 +289,30 @@ def add_list(usersToAdd):
         time.sleep(2)
     driver.find_element(by='xpath',value=doneLisatBtn).click()
     driver.close() 
-
+def start_process():
+    accounts = get_all_accounts()
+    global length
+    for account in accounts:
+        acc = Account(account['account'], account['username'], account['description'])
+        acc.followed_by = account['followed_by']
+        all_accounts[account['account']] = acc
+        doubled.add(account['account'])
+        inDb.add(account['account'])
+    length = len(all_accounts)
+    trackers = get_All_Tracked()
+    tracking = []
+    for tracked in trackers.data:
+        tracking.append(tracked['account'])
+    if(len(tracking) == 0):
+        print('No accounts to track')
+        exit()
+    print(tracking)
+    driver = twitter_log_in()
+    time.sleep(2)
+    get_following(driver,tracking)
+    driver.quit()
+    add_accounts_to_db()
+    print('done')
 
 def get_All_Tracked():
     try:
@@ -317,7 +351,7 @@ def update_or_insert(account, username, description, followed_by):
     except (Exception) as error:
         print ("Error while connecting to PostgreSQL", error)
     finally:
-        if(accounts):
+        if(account):
             print("PostgreSQL connection is closed and completed")
 
 def twitter_log_in():
@@ -423,6 +457,8 @@ def add_accounts_to_db():
         followed_by = account.followed_by
         accounts = account.account
         update_or_insert(accounts, username, description, followed_by)
+    global length
+    update_last_num(len(all_accounts)-length)
 def set_up_accts():
     accounts = get_all_accounts()
     for account in accounts:
@@ -497,27 +533,15 @@ def add_header(response):
 
 
 def run_cycle():
-    global iterator
-    if iterator == 1:
-        thingToTweet = 'My Name is JoJOBot @JKendzicky I am here to please you \n Check this out: https://www.youtube.com/watch?v=9bZkp7q19f0 \n Whoops I meant this \n Site: https://web3-exchange.vercel.app'
-        tweet = tweetThis(thingToTweet)
-        print(tweet)
-    else:
-        accounts = get_All_Tracked()
-        driver = logIn()
-        time.sleep(2)
-        set_up_accts()
-        get_following(driver,accounts)
-        add_accounts_to_db()
-        driver.close()
-        iterator = iterator + 1
+        start_process()
 
 def schedule_run_cycle():
     scheduler = BackgroundScheduler()
     # Change this line to run every 2 minutes
-    scheduler.add_job(run_cycle, "interval", minutes=1)
+    scheduler.add_job(run_cycle, "interval", hours=24)
     scheduler.start()
 
 
 app = Flask(__name__)
+start_process()
 schedule_run_cycle()

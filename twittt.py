@@ -52,11 +52,7 @@ inDb = set()
 url: str = os.getenv('SUPABASE_URL')
 key: str = os.getenv('SUPABASE_KEY')
 print('url',url)
-dbUser='postgres'
-dbPassword='C12veEutvfQzE2y9'
-dbPort="5432"
-dbHost = 'db.utvsxgfogcixgkztnvxo.supabase.co'
-dbdDatabase='postgres'
+
 dbUser='postgres'
 dbPassword='C12veEutvfQzE2y9'
 dbPort="5432"
@@ -87,7 +83,7 @@ tweetBtn ='//*[@id="react-root"]/div/div/div[2]/header/div/div/div/div[1]/div[3]
 nameInput='/html/body/div[1]/div/div/div[1]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[2]/div[2]/label/div/div[2]/div/input'
 descriptionBox = '/html/body/div[1]/div/div/div[1]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[2]/div[3]/label/div/div[2]/div/textarea'
 searchPeopleBox = '/html/body/div[1]/div/div/div[1]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[2]/div/div/form/div[1]/div/div/div/label/div[2]/div[1]/input'
-
+textBox = '//*[@id="layers"]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[3]/div[2]/div[1]/div/div/div/div[1]/div[2]/div/div/div/div/div/div/div[2]/div/div/div/div/label/div[1]/div/div/div/div/div/div[2]/div'
 
 addBtnList = '/html/body/div[1]/div/div/div[1]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[2]/div/div/form/div[2]/div/div[2]/div/div/div/div[2]/div/div[2]/div/span/span'
 usedSerachPeople = '/html/body/div[1]/div/div/div[1]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[2]/div/div/form/div[1]/div/div/div/label/div[3]/div'
@@ -118,6 +114,18 @@ def get_all_accounts():
     finally:
         if(accounts):
             print("PostgreSQL connection is closed")
+
+def update_last_num(amt):
+    try:
+        supabase.table('sign').update({
+            'last_updated': datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+            'new_amount': amt
+        }).eq('id', 2).execute()
+    except (Exception) as error:
+        print ("Error while connecting to PostgreSQL", error)
+    finally:
+        if(amt):
+            print("Added to Database")
 def update_or_insert(account, username, description, followed_by):
     try:
         if account in inDb:
@@ -136,7 +144,7 @@ def update_or_insert(account, username, description, followed_by):
     except (Exception) as error:
         print ("Error while connecting to PostgreSQL", error)
     finally:
-        if(accounts):
+        if(account):
             print("PostgreSQL connection is closed and completed")
 
 def twitter_log_in():
@@ -215,10 +223,11 @@ def get_following(driver,trackers):
                             if accountName in seen or accountName == '':
                                 continue
                             description = e.text[e.text.find('Follow'):].replace('Follow\n','',1)
-                            if description == '':
+                            if description == '' or description == 'Follow':
                                 seen.add(accountName)
                                 continue
                             if accountName in doubled:
+                                print('doubled maybe', accountName)
                                 acc = all_accounts[accountName]
                                 acc.add_follower(tracked)
                                 all_accounts[accountName] = acc
@@ -242,6 +251,8 @@ def add_accounts_to_db():
         followed_by = account.followed_by
         accounts = account.account
         update_or_insert(accounts, username, description, followed_by)
+    global length
+    update_last_num(len(all_accounts)-length)
 # accounts = get_all_accounts()
 # for account in accounts:
 #     acc = Account(account['account'], account['username'], account['description'])
@@ -285,31 +296,83 @@ def add_list(usersToAdd):
         time.sleep(2)
     driver.find_element(by='xpath',value=doneLisatBtn).click()
     driver.close() 
-# trackers = get_All_Tracked()
-# tracking = []
-# for tracked in trackers.data:
-#     tracking.append(tracked['account'])
-# if(len(tracking) == 0):
-#     print('No accounts to track')
-#     exit()
+def logIn():
+    # create instance of Chrome webdriver
+    driver = webdriver.Chrome() 
+    driver.get("https://twitter.com/login")
+        # adjust the sleep time according to your internet speed
+    time.sleep(2)
+    # find the element where we have to 
+    # enter the xpath
+    # driver.find_element.__getattribute__
+    # fill the number or mail
+    driver.find_element(
+        by='xpath', value=inputUser).send_keys(user)
+    # find the element next button 
+    # request using xpath 
+    # clicking on that element 
+    driver.find_element(
+        by='xpath',
+        value=nextBtn).click()
 
-# add_accounts_to_db()
-# add_list(['@therealKbusch','@elonmusk','@KyleBuschFans','@trump'])
+    # adjust the sleep time according to your internet speed
+    time.sleep(2)
 
-# eastern = pytz.timezone('US/Eastern')
-# eastern_time = datetime.now(eastern)
-# # Define the Eastern Time Zone
-# eastern = pytz.timezone('US/Eastern')
+    # find the element where we have to 
+    # enter the xpath
+    # fill the password
+    driver.find_element(
+        by='xpath',value=inputPass).send_keys(passwrd)
+    # find the element login button
+    # request using xpath
+    # clicking on that element
+    driver.find_element(by='xpath',value=logInBtn).click()
+    # adjust the sleep time according to your internet speed
+    time.sleep(2)
 
-# # Get the current time in Eastern Time Zone
-# eastern_time = datetime.now(eastern)
+    driver.find_element(by='xpath',value=tweetBtn).click()
+    time.sleep(2)
+    return driver
+length = 0
+def tweetThis(tweet):
+    print("I'm inside tweetThis()",tweet)
+    driver = logIn()
+    time.sleep(5)
+    driver.find_element(by='xpath',value=textBox).send_keys(tweet)
+    time.sleep(2)
+    tweetButton = '//*[@id="layers"]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[3]/div[2]/div[1]/div/div/div/div[2]/div[2]/div/div/div[2]/div[4]'
+    driver.find_element(by='xpath',value=tweetButton).click()
+    time.sleep(2)
+    driver.close()
+    return "Tweeted: "+tweet
+def start_process():
+    accounts = get_all_accounts()
+    global length
+    for account in accounts:
+        acc = Account(account['account'], account['username'], account['description'])
+        acc.followed_by = account['followed_by']
+        all_accounts[account['account']] = acc
+        doubled.add(account['account'])
+        inDb.add(account['account'])
+    length = len(all_accounts)
+    trackers = get_All_Tracked()
+    tracking = []
+    for tracked in trackers.data:
+        tracking.append(tracked['account'])
+    if(len(tracking) == 0):
+        print('No accounts to track')
+        exit()
+    print(tracking)
+    driver = twitter_log_in()
+    time.sleep(2)
+    get_following(driver,tracking)
+    driver.quit()
+    add_accounts_to_db()
+    print('done')
+start_process()
 
-# # Format the time in 'HH:MM AM/PM' format
-# hour_am_pm = eastern_time.strftime('%I:%M %p')
-# print(hour_am_pm)
-# print(datetime.now().strftime("%Y-%m-%d %H:%M")+hour_am_pm)
-
-print('printing all accounts')
-print_all_accounts(all_accounts)
 
 
+thingToTweet = 'My Name is JoJOBot @JKendzicky I am here to please you \n Check this out: https://www.youtube.com/watch?v=9bZkp7q19f0 \n Whoops I meant this \n Site: https://twitt-creep-eee.vercel.app/'
+tweet = tweetThis(thingToTweet)
+print(tweet)
