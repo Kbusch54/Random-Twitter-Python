@@ -3,5 +3,5 @@ selenium==3.141.0
 pytz==2021.1
 APScheduler==3.7.0
 flask-cors==3.0.10
-supabase==1.0.3
+supabase== 0.7.1
 python-dotenv==0.19.0
