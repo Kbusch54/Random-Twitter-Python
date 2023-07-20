@@ -5,7 +5,20 @@ import time
 import pytz
 from datetime import datetime
 from supabase import create_client, Client
+from dotenv import load_dotenv
 
+
+import os
+dotenv_path = './.env'
+load_dotenv(dotenv_path=dotenv_path)
+user = os.getenv('TWITTER_USER')
+username = os.getenv('TWITTER_USERNAME')
+passwrd = os.getenv('TWITTER_PASSWORD')
+doubled = set()
+all_accounts = {}
+inDb = set()
+url: str = os.getenv('SUPABASE_URL')
+key: str = os.getenv('SUPABASE_KEY')
 
 
 
@@ -30,7 +43,20 @@ class Account:
     
 
 
-
+user = os.getenv('TWITTER_USER')
+username = os.getenv('TWITTER_USERNAME')
+passwrd = os.getenv('TWITTER_PASSWORD')
+doubled = set()
+all_accounts = {}
+inDb = set()
+url: str = os.getenv('SUPABASE_URL')
+key: str = os.getenv('SUPABASE_KEY')
+print('url',url)
+dbUser='postgres'
+dbPassword='C12veEutvfQzE2y9'
+dbPort="5432"
+dbHost = 'db.utvsxgfogcixgkztnvxo.supabase.co'
+dbdDatabase='postgres'
 dbUser='postgres'
 dbPassword='C12veEutvfQzE2y9'
 dbPort="5432"
@@ -45,9 +71,7 @@ def print_all_accounts(accounts_dict):
         print(f"Followed by: {', '.join(info['followed_by'])}")
         print('-------')
 inputUser = '//*[@id="layers"]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div/div/div/div[5]/label/div/div[2]/div/input'
-user ='kdb22222'
-username = 'kdb22222'
-passwrd = '2012201994'
+
 nextBtn = '//*[@id="layers"]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div/div/div/div[6]/div'
 followingNum ='//*[@id="react-root"]/div/div/div[2]/main/div/div/div/div[1]/div/div[3]/div/div/div/div/div[5]/div[1]/a/span[1]/span'
 inputPass ='//*[@id="layers"]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[1]/div/div/div[3]/div/label/div/div[2]/div[1]/input'
@@ -73,8 +97,6 @@ listNextBtn = '/html/body/div[1]/div/div/div[1]/div[2]/div/div/div/div/div/div[2
 doubled = set()
 all_accounts = {}
 inDb = set()
-url: str = 'https://utvsxgfogcixgkztnvxo.supabase.co'
-key: str = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InV0dnN4Z2ZvZ2NpeGdrenRudnhvIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODc4ODg3MTIsImV4cCI6MjAwMzQ2NDcxMn0.6gKLbDZ3EE85lnlvAmQWzCHuD4HNjVFNZYgcnzAGqX0'
 supabase: Client = create_client(url, key)
 
 def get_All_Tracked():
@@ -272,7 +294,7 @@ def add_list(usersToAdd):
 #     exit()
 
 # add_accounts_to_db()
-add_list(['@therealKbusch','@elonmusk','@KyleBuschFans','@trump'])
+# add_list(['@therealKbusch','@elonmusk','@KyleBuschFans','@trump'])
 
 # eastern = pytz.timezone('US/Eastern')
 # eastern_time = datetime.now(eastern)
